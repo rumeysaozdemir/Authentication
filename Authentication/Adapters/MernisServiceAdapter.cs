@@ -13,13 +13,7 @@ namespace Authentication.Adapters
     {
         public bool CheckIfRealPerson(Customer customer)
         {
-             long identity = Convert.ToInt64(customer.NationalityId);
-            KPSPublicSoapClient client = new KPSPublicSoapClient(EndpointConfiguration.KPSPublicSoap);
-            var result = client.TCKimlikNoDogrulaAsync(identity, customer.FirstName.ToUpper(), customer.LastName.ToUpper(), customer.DateOfBirth.Year);
-
-            bool sonuc = result.Result.Body.TCKimlikNoDogrulaResult;
-
-            return sonuc;
+        
         }
     }
 }
